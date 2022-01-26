@@ -1,7 +1,8 @@
 package LoopExercises;
 
-public class CozaLozaWoza {
+public class CozaLozaWoza{
     final int UPPER_BOUND = 110;
+
 
     public CozaLozaWoza(){
         for (int i = 1; i <= UPPER_BOUND; i++){
@@ -30,4 +31,5 @@ public class CozaLozaWoza {
 
         }
     }
+
 }

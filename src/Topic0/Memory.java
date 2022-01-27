@@ -1,4 +1,4 @@
-package Challenge0;
+package Topic0;
 
 import java.util.Arrays;
 import java.util.HashMap;

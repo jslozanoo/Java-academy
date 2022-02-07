@@ -1,0 +1,6 @@
+In the program I tried to code the user class and all the printer classes completely
+decoupled with the use of the interface Printers. Also, I used the factory design pattern for
+the instantiation of the printers objects.
+If we introduce a new printer we only have to add it in the PrintersFactory and slightly modify
+the code in the main class (for inform the user the introduction of a new printer), in this way
+we don't have to modify the class user, the main code and the interface Printers.

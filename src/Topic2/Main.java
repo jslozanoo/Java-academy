@@ -25,6 +25,8 @@ public class Main {
         user.printInBlackAndWhite();
         user.printInColor();
 
+        
+
     }
 
 }

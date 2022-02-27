@@ -1,4 +1,4 @@
-package com.company;
+package BasicJavaEx;
 
 import java.util.Scanner;
 

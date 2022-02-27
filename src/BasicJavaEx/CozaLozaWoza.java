@@ -1,4 +1,4 @@
-package LoopExercises;
+package BasicJavaEx;
 
 public class CozaLozaWoza{
     final int UPPER_BOUND = 110;

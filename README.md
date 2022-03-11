@@ -4,7 +4,8 @@ Repository for the java academy 2022 in Globant. You can view all the nine chall
 
 # Structure of the repository
 
-In each folder you can find the respective challenge. You can navigate the folders in this way:
+In each folder you can find the respective challenge. In the topic 5, topic 6, topic 7 and topic 8, you will find a txt file with a repository URL where you can see the solution of each challenge.
+You can navigate the folders in this way:
 
 - Topic 0: Introduction to Java and OOP.
 - Topic 1: Design and development principles.

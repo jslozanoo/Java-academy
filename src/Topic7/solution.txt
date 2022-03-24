@@ -1,0 +1,2 @@
+For see the solution of the challenge 7, please go to this git repository
+https://github.com/jslozanoo/Challenge7.git

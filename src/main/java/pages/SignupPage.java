@@ -5,12 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.concurrent.TimeUnit;
-
 /**
  * Page to create an account
  */
 public class SignupPage extends BasePage {
+
     @FindBy(id = "did-ui-view")
     private WebElement signupFormContainer;
     @FindBy(name = "firstName")
@@ -51,10 +50,12 @@ public class SignupPage extends BasePage {
     /**
      * Click signup button
      */
-    public void clickSignUpButton(){
+    public MainPage clickSignUpButton(){
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
         js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
         waitElementToBeClickable(signupButton);
         signupButton.click();
+        getDriver().switchTo().defaultContent();
+        return new MainPage(getDriver());
     }
 }

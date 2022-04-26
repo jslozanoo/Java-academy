@@ -29,14 +29,23 @@ public class LoginPage extends BasePage{
     }
 
     /**
-     * For sending keys to text input boxes
-     * @param element
-     * @param keyToSend
+     * Send email to input email field
+     * @param email
      */
-    public void setTextBox(WebElement element, String keyToSend){
-            waitElementVisibility(element);
-            element.click();
-            element.sendKeys(keyToSend);
+    public void setEmail(String email){
+        waitElementVisibility(emailFieldLoginForm);
+        emailFieldLoginForm.click();
+        emailFieldLoginForm.sendKeys(email);
+    }
+
+    /**
+     * Send email to input email field
+     * @param password
+     */
+    public void setPassword(String password){
+        waitElementVisibility(passwordFieldLoginForm);
+        passwordFieldLoginForm.click();
+        passwordFieldLoginForm.sendKeys(password);
     }
 
     /**
@@ -52,8 +61,8 @@ public class LoginPage extends BasePage{
      * Click on sign up to create an account
      * @return
      */
-    public SignUpPage signUp() {
+    public SignupPage signUp() {
         signUpLink.click();
-        return new SignUpPage(getDriver());
+        return new SignupPage(getDriver());
     }
 }

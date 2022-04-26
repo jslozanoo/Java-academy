@@ -5,10 +5,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+
 /**
  * home page
  */
 public class HomePage extends BasePage{
+
+    @FindBy(id = "disneyid-iframe")
+    private WebElement loginFrame;
 
     @FindBy(id = "global-user-trigger")
     private WebElement dropdownMainMenuButton;
@@ -57,13 +61,23 @@ public class HomePage extends BasePage{
     }
 
     /**
-     * Click on login button
+     * Switch to iframe for login
+     * @param loginFrame
+     */
+    public void switchToLoginFrame(WebElement loginFrame){
+        getDriver().switchTo().frame(loginFrame);
+    }
+
+    /**
+     * Click on login button to display login form
      * @return LoginPage instance
      */
     public LoginPage clickLoginButton(){
         clickDropdownMenu();
         getWait().until(ExpectedConditions.elementToBeClickable(dropdownMainMenuLoginButton));
         dropdownMainMenuLoginButton.click();
+        switchToLoginFrame(loginFrame);
+
         return new LoginPage(getDriver());
     }
 }

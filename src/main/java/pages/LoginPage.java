@@ -5,48 +5,53 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * Page for interface displayed after click login button on main menu
+ * Page for interface displayed after click login button on main menu. It's in an iframe
  */
 public class LoginPage extends BasePage{
 
-    @FindBy(id = "did-ui-view")
-    private WebElement loginContainer;
+    @FindBy(css = "form input[type='email']")
+    private WebElement emailFieldLoginForm;
 
-    @FindBy(css = "#did-ui-view input[type='email']")
-    private WebElement emailFieldLoginContainer;
+    @FindBy(css = "form input[type='password']")
+    private WebElement passwordFieldLoginForm;
 
-    @FindBy(css = "#did-ui-view input[type='password']")
-    private WebElement passwordFieldLoginContainer;
+    @FindBy(css = "form button")
+    private WebElement loginButtonLoginForm;
 
-    @FindBy(css = "#did-ui-view button")
-    private WebElement loginButtonLoginContainer;
-
-    @FindBy(css = "#did-ui-view div.block a")
+    @FindBy(css = "div.block a")
     private WebElement needHelpText;
 
-    @FindBy(css = "#did-ui-view a:last-of-type.btn")
+    @FindBy(css = "a.btn")
     private WebElement signUpLink;
 
     public LoginPage(WebDriver driver){
         super(driver);
     }
 
-    public boolean isLoginInterfaceVisible(){
-        return loginContainer.isDisplayed();
-    }
-
+    /**
+     * For sending keys to text input boxes
+     * @param element
+     * @param keyToSend
+     */
     public void setTextBox(WebElement element, String keyToSend){
-        if (isLoginInterfaceVisible()){
             waitElementVisibility(element);
             element.click();
             element.sendKeys(keyToSend);
-        }
     }
 
-    public void clickLoginButton(){
-        loginButtonLoginContainer.click();
+    /**
+     * Click on login button
+     * @return
+     */
+    public MainPage clickLoginButton(){
+        loginButtonLoginForm.click();
+        return new MainPage(getDriver());
     }
 
+    /**
+     * Click on sign up to create an account
+     * @return
+     */
     public SignUpPage signUp() {
         signUpLink.click();
         return new SignUpPage(getDriver());

@@ -69,7 +69,7 @@ public class HomePage extends BasePage{
     }
 
     /**
-     * Click on login button to display login form
+     * Click on login button to display login form, switch driver to login form iframe
      * @return LoginPage instance
      */
     public LoginPage clickLoginButton(){

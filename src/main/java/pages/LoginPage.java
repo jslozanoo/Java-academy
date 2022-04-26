@@ -61,7 +61,8 @@ public class LoginPage extends BasePage{
      * Click on sign up to create an account
      * @return
      */
-    public SignupPage signUp() {
+    public SignupPage clickSignupButton() {
+        waitElementToBeClickable(signUpLink);
         signUpLink.click();
         return new SignupPage(getDriver());
     }

@@ -22,6 +22,10 @@ public class BasePage {
         getWait().until(ExpectedConditions.visibilityOf(element));
     }
 
+    public void waitElementToBeClickable(WebElement element){
+        getWait().until(ExpectedConditions.elementToBeClickable(element));
+    }
+
     public WebDriver getDriver() {
         return driver;
     }

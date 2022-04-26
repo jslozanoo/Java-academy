@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * LoginPage for interface displayed after click login button on main menu
+ * Page for interface displayed after click login button on main menu
  */
 public class LoginPage extends BasePage{
 
@@ -31,23 +31,24 @@ public class LoginPage extends BasePage{
         super(driver);
     }
 
-    public void setEmail(String username){
-
+    public boolean isLoginInterfaceVisible(){
+        return loginContainer.isDisplayed();
     }
 
-    public void setPassword(String password){
-
+    public void setTextBox(WebElement element, String keyToSend){
+        if (isLoginInterfaceVisible()){
+            waitElementVisibility(element);
+            element.click();
+            element.sendKeys(keyToSend);
+        }
     }
 
-    public void login(){
-
+    public void clickLoginButton(){
+        loginButtonLoginContainer.click();
     }
 
-    public void pageVerification(){
-        // validate if i am in the right page
-    }
-
-    public void signUp(){
-        // send to a new Class SignUpPage
+    public SignUpPage signUp() {
+        signUpLink.click();
+        return new SignUpPage(getDriver());
     }
 }
